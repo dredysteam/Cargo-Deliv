@@ -5,9 +5,11 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
 }
+
 
 body {
   font-family: "Rubik", sans-serif;
@@ -15,6 +17,7 @@ body {
   font-weight: 800;
   color: #555;
 }
+
 
 .heading-primary {
   font-size: 5.2rem;
@@ -62,3 +65,4 @@ body {
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
+
