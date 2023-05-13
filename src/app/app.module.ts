@@ -6,12 +6,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from 'src/auth/auth.module';
 import { MainModule } from 'src/main/main.module';
 
+//container
 import { AppComponent } from './app.component';
+
+//components
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
 
 const ROUTES: Routes = [];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
@@ -20,5 +25,6 @@ const ROUTES: Routes = [];
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [HeaderComponent, NavComponent],
 })
 export class AppModule {}
