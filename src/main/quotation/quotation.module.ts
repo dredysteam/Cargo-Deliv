@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
 // containers
 import { QuotationFormComponent } from './containers/quotation-form/quotation-form.component';
-import { RouterModule, Routes } from '@angular/router';
+
+//components
 import { AditionalInfoComponent } from './components/aditional-info/aditional-info.component';
 import { DeliveryInfoComponent } from './components/delivery-info/delivery-info.component';
 import { PalletSelectorComponent } from './components/pallet-selector/pallet-selector.component';
@@ -18,7 +20,14 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  declarations: [QuotationFormComponent, AditionalInfoComponent, DeliveryInfoComponent, PalletSelectorComponent, PickupInfoComponent, StockPalletsComponent],
+  declarations: [
+    QuotationFormComponent,
+    AditionalInfoComponent,
+    DeliveryInfoComponent,
+    PalletSelectorComponent,
+    PickupInfoComponent,
+    StockPalletsComponent,
+  ],
   imports: [CommonModule, RouterModule.forChild(ROUTES)],
 })
 export class QuotationModule {}
