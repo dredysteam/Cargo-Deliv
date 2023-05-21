@@ -11,7 +11,6 @@ import { StockPallet } from '../../models/stockPallet.interface';
 import { QuotationService } from '../../quotation.service';
 @Component({
   selector: 'app-quotation-form',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './quotation-form.component.html',
   styleUrls: ['./quotation-form.component.css'],
 })
@@ -45,10 +44,7 @@ export class QuotationFormComponent implements OnInit {
       this.createStockPallet({ type: 'other', high: 12, quantity: 10 }),
     ]),
   });
-  constructor(
-    private quotationService: QuotationService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  constructor(private quotationService: QuotationService) {}
 
   ngOnInit(): void {}
 
@@ -73,7 +69,6 @@ export class QuotationFormComponent implements OnInit {
 
   handleSubmit() {
     console.log(this.form.value);
-    this.cdr.markForCheck();
     // this.quotationService.addQuotation(this.form.value);
     // this.create.emit(quotation);
     // if (isValid) {

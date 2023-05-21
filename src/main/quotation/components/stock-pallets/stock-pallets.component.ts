@@ -13,7 +13,6 @@ import { StockPallet } from '../../models/stockPallet.interface';
 
 @Component({
   selector: 'app-stock-pallets',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './stock-pallets.component.html',
   styleUrls: ['./stock-pallets.component.css'],
 })
