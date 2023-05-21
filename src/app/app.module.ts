@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-// custom modules
+// feature modules
 import { AuthModule } from 'src/auth/auth.module';
 import { MainModule } from 'src/main/main.module';
 
@@ -13,7 +13,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 
-const ROUTES: Routes = [];
+const ROUTES: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard',
+  },
+];
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavComponent],
