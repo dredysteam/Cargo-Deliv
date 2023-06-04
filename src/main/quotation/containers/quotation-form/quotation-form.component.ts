@@ -41,14 +41,14 @@ export class QuotationFormComponent implements OnInit {
     }),
     selector: this.createStockPallet({}),
     stockPallets: new FormArray([
-      this.createStockPallet({ type: 'other', high: 12, quantity: 10 }),
+      // this.createStockPallet({ type: 'other', high: 12, quantity: 10 }),
     ]),
   });
   constructor(private quotationService: QuotationService) {}
 
   ngOnInit(): void {}
 
-  createStockPallet(stockPallet: StockPallet) {
+  createStockPallet(stockPallet?: StockPallet) {
     return new FormGroup({
       type: new FormControl(stockPallet.type || ''),
       high: new FormControl(stockPallet.high || 0),
@@ -59,7 +59,6 @@ export class QuotationFormComponent implements OnInit {
   addStock(stockPallet: StockPallet) {
     const control = this.form.get('stockPallets') as FormArray;
     control.push(this.createStockPallet(stockPallet));
-    // control = [...control,this.createStockPallet(stockPallet)]
   }
 
   removeStock({ group, index }: { group: FormGroup; index: number }) {
