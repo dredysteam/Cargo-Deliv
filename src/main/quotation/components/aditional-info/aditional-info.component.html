@@ -1,6 +1,12 @@
 <div [formGroup]="parent" class="quotation-form-item">
   <div formGroupName="aditionalInfo" class="flex-y-container">
     <h3 class="heading-terciary">Additional Shipping Information</h3>
+    <label>Company:</label>
+    <input type="text" formControlName="company" />
+    <label>Email:</label>
+    <input type="text" formControlName="email" />
+    <label>Phone:</label>
+    <input type="text" formControlName="phone" />
     <label>Commodity:</label>
     <input type="text" placeholder="e.g food" formControlName="commodity" />
     <label for="total-weight">Total Weight:</label>

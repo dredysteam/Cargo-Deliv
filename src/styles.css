@@ -115,7 +115,7 @@ body {
   margin-right: 1.6rem !important;
 }
 
-.label {
+label {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;

@@ -1,14 +1,11 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PalletType } from '../../models/palletType.interface';
 import { Quotation } from '../../models/quotation.interface';
 import { StockPallet } from '../../models/stockPallet.interface';
 import { QuotationService } from '../../quotation.service';
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-quotation-form',
   templateUrl: './quotation-form.component.html',
@@ -35,6 +32,9 @@ export class QuotationFormComponent implements OnInit {
       appointment: new FormControl(''),
     }),
     aditionalInfo: new FormGroup({
+      company: new FormControl(''),
+      email: new FormControl(''),
+      phone: new FormControl(''),
       commodity: new FormControl(''),
       totalWeight: new FormControl(''),
       freightType: new FormControl(''),
@@ -68,6 +68,13 @@ export class QuotationFormComponent implements OnInit {
 
   handleSubmit() {
     console.log(this.form.value);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 2000,
+    });
     // this.quotationService.addQuotation(this.form.value);
     // this.create.emit(quotation);
     // if (isValid) {
