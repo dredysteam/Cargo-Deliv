@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
+
+//interface
+import { StockPallet } from '../../models/stockPallet.interface';
 
 @Component({
   selector: 'app-stock-pallets',
   templateUrl: './stock-pallets.component.html',
-  styleUrls: ['./stock-pallets.component.css']
+  styleUrls: ['./stock-pallets.component.css'],
 })
 export class StockPalletsComponent implements OnInit {
+  @Input() parent: FormGroup;
 
-  constructor() { }
+  @Output() removed = new EventEmitter<any>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  get pallets() {
+    return (this.parent.get('stockPallets') as FormArray).controls;
   }
 
+  onRemove(group, index) {
+    this.removed.emit({ group, index });
+  }
 }

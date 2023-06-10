@@ -1,1 +1,25 @@
-<p>pickup-info works!</p>
+<div [formGroup]="parent" class="quotation-form-item">
+  <div formGroupName="pickupInfo" class="flex-y-container">
+    <h3 class="heading-terciary">
+      Where are you shipping from? - Pickup Location
+    </h3>
+
+    <label>Enter Pickuo ZipCode</label>
+    <input
+      type="text"
+      placeholder="Enter Pickup ZipCode"
+      formControlName="pickupZipcode"
+    />
+    <!-- <small *ngIf="pickupZipcodeNotValid" class="text-danger"
+      >Please enter valid ZipCode</small
+    > -->
+
+    <label>Pickup Date:</label>
+    <input type="date" formControlName="pickupDate" />
+
+    <div class="flex-x-container">
+      <label class="liftgate-label">Do you require a Lift Gate?</label>
+      <input type="checkbox" formControlName="liftgate" class="checkbox-item" />
+    </div>
+  </div>
+</div>

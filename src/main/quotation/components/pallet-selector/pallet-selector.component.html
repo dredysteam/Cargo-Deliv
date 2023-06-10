@@ -1,1 +1,35 @@
-<p>pallet-selector works!</p>
+<div [formGroup]="parent" class="quotation-form-item">
+  <div formGroupName="selector" class="flex-y-container">
+    <label>Pallet Type:</label>
+    <select formControlName="type">
+      <option value="">Select pallet type</option>
+      <option *ngFor="let item of palletTypes" [value]="item.id">
+        {{ item.type }}
+      </option>
+    </select>
+    <label>Pallet Height:(inches)</label>
+    <input type="number" formControlName="high" />
+
+    <label>Pallet Quantity:</label>
+    <input type="number" formControlName="quantity" />
+    <button class="btn btn--outline" (click)="onAdd()">Add stock</button>
+
+    <!-- <label class="step-description" for="temperature">Temperature:</label>
+    <input
+      class="step-description"
+      type="text"
+      id="temperature"
+      name="temperature"
+    /> -->
+    <!-- <label class="step-description" for="contact-number"
+      >Contact Number:</label
+    >
+    <input
+      class="step-description"
+      type="tel"
+      id="contact-number"
+      name="contact-number"
+      required
+    /> -->
+  </div>
+</div>

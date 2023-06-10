@@ -1,1 +1,62 @@
-<p>quotation-form works!</p>
+<div class="section-quotation">
+  <div class="container">
+    <div class="quotation">
+      <div class="quotation-text-box">
+        <h2 class="heading-secondary">Get Quote</h2>
+        <form
+          class="quotation-form"
+          action="#"
+          (ngSubmit)="handleSubmit()"
+          [formGroup]="form"
+          novalidate
+        >
+          <app-pickup-info
+            [parent]="form"
+            class="grid-item-pickup"
+          ></app-pickup-info>
+
+          <app-delivery-info
+            [parent]="form"
+            class="grid-item-delivery"
+          ></app-delivery-info>
+
+          <app-aditional-info
+            [parent]="form"
+            class="grid-item-aditional"
+          ></app-aditional-info>
+
+          <app-pallet-selector
+            [parent]="form"
+            [palletTypes]="palletTypes"
+            (added)="addStock($event)"
+            class="grid-item-selector"
+          ></app-pallet-selector>
+
+          <app-stock-pallets
+            [parent]="form"
+            (removed)="removeStock($event)"
+            class="grid-item-stock"
+          ></app-stock-pallets>
+
+          <button
+            class="grid-item-button btn--form"
+            [disabled]="form.invalid"
+            type="submit"
+          >
+            Get Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <pre>
+  Estado del formulario: {{form.valid}}
+  <br>
+  Status:{{form.status}}
+</pre>
+
+<pre>
+  {{ form.value | json }}
+</pre>  -->
