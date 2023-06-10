@@ -68,13 +68,13 @@ export class QuotationFormComponent implements OnInit {
 
   handleSubmit() {
     console.log(this.form.value);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
-      showConfirmButton: false,
-      timer: 2000,
-    });
+    // Swal.fire({
+    //   position: 'top-end',
+    //   icon: 'success',
+    //   title: 'Your work has been saved',
+    //   showConfirmButton: false,
+    //   timer: 2000,
+    // });
     // this.quotationService.addQuotation(this.form.value);
     // this.create.emit(quotation);
     // if (isValid) {
