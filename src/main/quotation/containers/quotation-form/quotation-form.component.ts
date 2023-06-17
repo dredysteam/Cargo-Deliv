@@ -97,7 +97,14 @@ export class QuotationFormComponent implements OnInit {
   }
 
   backToHome() {
-    // Swal.fire('Good job!', 'You clicked the button!', 'success');
-    this.router.navigate(['']);
+    Swal.fire({
+      title: 'Quotation created!',
+      // showDenyButton: true,
+      // showCancelButton: true,
+      confirmButtonText: 'Ok',
+      // denyButtonText: `Don't save`,
+    }).then((result) => {
+      this.router.navigate(['']);
+    });
   }
 }
