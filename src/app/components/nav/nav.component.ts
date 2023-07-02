@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
     },
     {
       route: 'howitworks',
-      name: 'How It Works',
+      name: 'How It Worksss',
     },
     {
       route: 'quotation',
