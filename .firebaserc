@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cargo-delivery-app": {
+      "hosting": {
+        "Cargo-Deliveries_app": [
+          "cargo-delivery-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cargo-delivery-app"
+  }
+}

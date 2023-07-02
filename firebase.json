@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "Cargo-Deliveries_app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
