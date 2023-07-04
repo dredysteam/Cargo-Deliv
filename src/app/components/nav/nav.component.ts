@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
     },
     {
       route: 'quotation',
-      name: 'Quotation',
+      name: 'Free Quote',
     },
   ];
 
