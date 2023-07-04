@@ -13,6 +13,11 @@ const ROUTES: Routes = [
     loadChildren: () =>
       import('./quotation/quotation.module').then((m) => m.QuotationModule),
   },
+  {
+    path: 'howitworks',
+    loadChildren: () =>
+      import('./howitworks/howitworks.module').then((m) => m.HowitworksModule),
+  },
 ];
 
 @NgModule({
