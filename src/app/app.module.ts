@@ -12,11 +12,12 @@ import { AppComponent } from './app.component';
 //components
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const ROUTES: Routes = [];
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent, FooterComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
