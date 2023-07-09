@@ -37,19 +37,13 @@
           class="grid-item-stock"
         ></app-stock-pallets>
 
-        <button
-          class="grid-item-button btn--form"
-          [disabled]="form.invalid"
-          type="submit"
-        >
-          Get Quote
-        </button>
+        <button [disabled]="form.invalid" type="submit">Get Quote</button>
       </form>
     </div>
   </div>
 </div>
 
-<!-- <pre>
+<pre>
   Estado del formulario: {{form.valid}}
   <br>
   Status:{{form.status}}
@@ -57,4 +51,4 @@
 
 <pre>
   {{ form.value | json }}
-</pre>  -->
+</pre>

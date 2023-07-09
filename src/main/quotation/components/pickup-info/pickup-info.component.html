@@ -4,18 +4,21 @@
       Where are you shipping from? - Pickup Location
     </h3>
 
-    <label>Enter Pickuo ZipCode</label>
+    <label>Enter Pickup ZipCode</label>
     <input
       type="text"
       placeholder="Enter Pickup ZipCode"
       formControlName="pickupZipcode"
     />
-    <!-- <small *ngIf="pickupZipcodeNotValid" class="text-danger"
-      >Please enter valid ZipCode</small
-    > -->
+    <small class="error" *ngIf="required('pickupZipcode')"
+      >Pickup ZipCode is required</small
+    >
 
     <label>Pickup Date:</label>
     <input type="date" formControlName="pickupDate" />
+    <small class="error" *ngIf="required('pickupDate')"
+      >Pickup date is required</small
+    >
 
     <div class="flex-x-container">
       <label class="liftgate-label">Do you require a Lift Gate?</label>

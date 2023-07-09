@@ -17,4 +17,11 @@ export class PickupInfoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  required(name: string) {
+    return (
+      this.parent.get(`pickupInfo.${name}`).hasError('required') &&
+      this.parent.get(`pickupInfo.${name}`).touched
+    );
+  }
 }

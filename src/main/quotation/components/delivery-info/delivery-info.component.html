@@ -9,9 +9,9 @@
       placeholder="Enter Delivery ZipCode"
       formControlName="deliveryZipcode"
     />
-    <!-- <small *ngIf="deliveryZipcodeNotValid" class="text-danger"
-      >Please enter valid ZipCode</small
-    > -->
+    <small class="error" *ngIf="required('deliveryZipcode')"
+      >Delivery ZipCode is required</small
+    >
     <div class="flex-x-container">
       <label>Do you require Appointment?</label>
       <input
