@@ -1,24 +1,21 @@
 <div [formGroup]="parent">
   <div formArrayName="stockPallets">
-    <table *ngIf="pallets.length > 0">
+    <table class="table" *ngIf="pallets.length > 0">
       <thead>
         <tr>
-          <th class="heading-terciary">Pallet Type</th>
-          <th class="heading-terciary">Height</th>
-          <th class="heading-terciary">Quantity</th>
-          <th></th>
+          <th>Pallet Type</th>
+          <th>Height</th>
+          <th>Quantity</th>
         </tr>
       </thead>
 
       <tbody *ngFor="let item of pallets; let i = index">
         <tr [formGroupName]="i">
-          <td class="heading-terciary">{{ item.value.type }}</td>
-          <td class="heading-terciary">{{ item.value.high }}</td>
-          <td class="heading-terciary">{{ item.value.quantity }}</td>
+          <td>{{ item.value.type }}</td>
+          <td>{{ item.value.high }}</td>
+          <td>{{ item.value.quantity }}</td>
           <td>
-            <button class="btn btn--outline" (click)="onRemove(item.value, i)">
-              Remove
-            </button>
+            <button (click)="onRemove(item.value, i)">Remove</button>
             <!-- <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

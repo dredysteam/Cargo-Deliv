@@ -24,18 +24,20 @@
           class="grid-item-aditional"
         ></app-aditional-info>
 
-        <app-pallet-selector
-          [parent]="form"
-          [palletTypes]="palletTypes"
-          (added)="addStock($event)"
-          class="grid-item-selector"
-        ></app-pallet-selector>
+        <div>
+          <app-pallet-selector
+            [parent]="form"
+            [palletTypes]="palletTypes"
+            (added)="addStock($event)"
+            class="grid-item-selector"
+          ></app-pallet-selector>
 
-        <app-stock-pallets
-          [parent]="form"
-          (removed)="removeStock($event)"
-          class="grid-item-stock"
-        ></app-stock-pallets>
+          <app-stock-pallets
+            [parent]="form"
+            (removed)="removeStock($event)"
+            class="grid-item-stock"
+          ></app-stock-pallets>
+        </div>
 
         <button [disabled]="form.invalid" type="submit">Get Quote</button>
       </form>
@@ -43,7 +45,7 @@
   </div>
 </div>
 
-<pre>
+<!-- <pre>
   Estado del formulario: {{form.valid}}
   <br>
   Status:{{form.status}}
@@ -51,4 +53,4 @@
 
 <pre>
   {{ form.value | json }}
-</pre>
+</pre> -->
