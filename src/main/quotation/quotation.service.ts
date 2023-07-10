@@ -13,9 +13,8 @@ export class QuotationService {
   addQuotation(quotation: Quotation) {
     console.log('Adding quotation' + quotation);
 
-    //disabled temp para no subirlo al backend
-    // quotation.id = this.firestore.createId();
-    // return this.firestore.collection('/Quotations').add(quotation);
+    quotation.id = this.firestore.createId();
+    return this.firestore.collection('/Quotations').add(quotation);
 
     // return this.http.post(`${this.url}/quotation.json`, {
     //   id: 1,
