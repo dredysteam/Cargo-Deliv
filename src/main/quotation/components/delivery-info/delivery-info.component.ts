@@ -18,4 +18,11 @@ export class DeliveryInfoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  required(name: string) {
+    return (
+      this.parent.get(`deliveryInfo.${name}`).hasError('required') &&
+      this.parent.get(`deliveryInfo.${name}`).touched
+    );
+  }
 }

@@ -3,6 +3,7 @@
     <h3 class="heading-terciary">Additional Shipping Information</h3>
     <label>Company:</label>
     <input type="text" formControlName="company" />
+    <small class="error" *ngIf="required('company')">Company is required</small>
     <label>Email:</label>
     <input type="text" formControlName="email" />
     <label>Phone:</label>
@@ -17,5 +18,8 @@
       <option value="Dry Van">Dry Van</option>
       <option value="Refrigerated">Refrigerated</option>
     </select>
+    <small class="error" *ngIf="required('freightType')"
+      >Freight type is required</small
+    >
   </div>
 </div>

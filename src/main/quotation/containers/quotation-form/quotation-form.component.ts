@@ -27,21 +27,21 @@ export class QuotationFormComponent implements OnInit {
 
   form = new FormGroup({
     pickupInfo: new FormGroup({
-      pickupZipcode: new FormControl(''),
-      pickupDate: new FormControl(''),
+      pickupZipcode: new FormControl('', Validators.required),
+      pickupDate: new FormControl('', Validators.required),
       liftgate: new FormControl(''),
     }),
     deliveryInfo: new FormGroup({
-      deliveryZipcode: new FormControl(''),
+      deliveryZipcode: new FormControl('', Validators.required),
       appointment: new FormControl(''),
     }),
     aditionalInfo: new FormGroup({
-      company: new FormControl(''),
-      email: new FormControl(''),
-      phone: new FormControl(''),
+      company: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.email),
+      phone: new FormControl('', Validators.required),
       commodity: new FormControl(''),
       totalWeight: new FormControl(''),
-      freightType: new FormControl(''),
+      freightType: new FormControl('', Validators.required),
     }),
     selector: this.createStockPallet({}),
     stockPallets: new FormArray([

@@ -57,7 +57,6 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-
 }
 
 .grid--2-cols {
@@ -123,6 +122,13 @@ label {
   font-weight: 500;
   margin-bottom: 1.2rem;
 }
+th,
+td {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
 
 input,
 select {
@@ -161,7 +167,7 @@ button {
 }
 
 .btn--form:hover {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #555;
 }
 
@@ -182,4 +188,16 @@ button {
 
 .checkbox-item {
   width: auto;
+}
+
+.error {
+  background: #b52d30;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 0 0 3px 3px;
+  line-height: 1;
+  padding: 0.6rem 1rem;
+  margin-top: -1px;
 }

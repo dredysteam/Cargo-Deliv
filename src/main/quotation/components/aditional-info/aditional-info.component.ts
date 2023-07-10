@@ -18,4 +18,11 @@ export class AditionalInfoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  required(name: string) {
+    return (
+      this.parent.get(`aditionalInfo.${name}`).hasError('required') &&
+      this.parent.get(`aditionalInfo.${name}`).touched
+    );
+  }
 }
