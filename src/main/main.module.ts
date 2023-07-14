@@ -18,6 +18,11 @@ const ROUTES: Routes = [
     loadChildren: () =>
       import('./howitworks/howitworks.module').then((m) => m.HowitworksModule),
   },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./orders/orders.module').then((m) => m.OrdersModule),
+  },
 ];
 
 @NgModule({

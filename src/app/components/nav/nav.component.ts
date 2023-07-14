@@ -9,7 +9,7 @@ export class NavComponent implements OnInit {
   list = [
     {
       route: 'dashboard',
-      name: 'Dashboard',
+      name: 'Home',
     },
     {
       route: 'howitworks',
@@ -18,6 +18,10 @@ export class NavComponent implements OnInit {
     {
       route: 'quotation',
       name: 'Free Quote',
+    },
+    {
+      route: 'orders',
+      name: 'Orders',
     },
   ];
 
