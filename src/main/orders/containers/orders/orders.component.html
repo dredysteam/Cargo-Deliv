@@ -16,16 +16,15 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let order of orders">
+          <td>{{ order?.aditionalInfo.company }}</td>
+          <td>{{ order?.aditionalInfo.commodity }}</td>
+          <td>{{ order?.aditionalInfo.freightType }}</td>
+          <td>{{ order?.pickupInfo.pickupDate }}</td>
+          <td>{{ order?.pickupInfo.pickupZipcode }}</td>
+          <td>{{ order?.deliveryInfo.deliveryZipcode }}</td>
+          <td>{{ order?.aditionalInfo.phone }}</td>
+          <td>initial</td>
           <td>
             <button>Edit</button>
           </td>
