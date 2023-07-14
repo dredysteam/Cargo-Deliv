@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrdersService {
+  constructor(private firestore: AngularFirestore) {}
 
-  constructor() { }
+  getQuotations() {
+    return this.firestore.collection('/Quotations').snapshotChanges();
+  }
 }
