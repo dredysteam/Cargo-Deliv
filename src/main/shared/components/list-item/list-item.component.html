@@ -1,0 +1,13 @@
+<div class="list-item">
+  <p>{{ item.aditionalInfo?.company }}</p>
+  <p>{{ item.aditionalInfo?.commodity }}</p>
+  <p>{{ item.aditionalInfo?.freightType }}</p>
+  <p>{{ item.pickupInfo?.pickupDate }}</p>
+  <p>{{ item.pickupInfo?.pickupZipcode }}</p>
+  <p>{{ item.deliveryInfo?.deliveryZipcode }}</p>
+  <p>{{ item.aditionalInfo?.phone }}</p>
+  <p *ngIf="!toggled">{{ item.status }}</p>
+  <input [(ngModel)]="item.status" *ngIf="toggled" type="text" />
+  <button *ngIf="toggled" type="button" (click)="updateItem()">Save</button>
+  <button *ngIf="!toggled" type="button" (click)="toggle()">Edit</button>
+</div>

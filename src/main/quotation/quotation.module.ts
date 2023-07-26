@@ -15,7 +15,7 @@ import { PickupInfoComponent } from './components/pickup-info/pickup-info.compon
 import { StockPalletsComponent } from './components/stock-pallets/stock-pallets.component';
 
 //services
-import { QuotationService } from './quotation.service';
+import { QuotationService } from '../shared/services/quotation.service';
 
 const ROUTES: Routes = [
   {

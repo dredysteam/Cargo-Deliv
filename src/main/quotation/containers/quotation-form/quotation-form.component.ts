@@ -6,7 +6,7 @@ import { PalletType } from '../../models/palletType.interface';
 import { Quotation } from '../../models/quotation.interface';
 import { StockPallet } from '../../models/stockPallet.interface';
 //service
-import { QuotationService } from '../../quotation.service';
+import { QuotationService } from '../../../shared/services/quotation.service';
 
 import Swal from 'sweetalert2';
 @Component({
@@ -74,8 +74,9 @@ export class QuotationFormComponent implements OnInit {
   }
 
   async handleSubmit() {
-    // console.log(this.form.value);
-    await this.quotationService.addQuotation(this.form.value);
+    const status = 'created';
+    const quotation = { status, ...this.form.value };
+    await this.quotationService.addQuotation(quotation);
     // alert('Quotation added succesfully');
     this.backToHome();
   }
