@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //interfaces
-import { Quotation } from './models/quotation.interface';
+import { Quotation } from '../../quotation/models/quotation.interface';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
@@ -10,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class QuotationService {
   constructor(private firestore: AngularFirestore) {}
 
-  addQuotation(quotation: Quotation) {
+  addQuotation(quotation: any) {
     console.log('Adding quotation' + quotation);
 
     quotation.id = this.firestore.createId();
@@ -26,12 +26,16 @@ export class QuotationService {
     return this.firestore.collection('/Quotations').snapshotChanges();
   }
 
-  deleteQuotation(quotation: Quotation) {
+  deleteQuotation(quotation: any) {
     return this.firestore.doc('/Quotations/' + quotation.id).delete();
   }
 
-  updateQuotation(quotation: Quotation) {
-    this.deleteQuotation(quotation);
-    this.addQuotation(quotation);
+  updateQuotation(quotation: any) {
+    // this.deleteQuotation(quotation);
+    // this.addQuotation(quotation);
+    return this.firestore
+      .collection('/Quotations')
+      .doc(quotation.uid)
+      .update(quotation);
   }
 }

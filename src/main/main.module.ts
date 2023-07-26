@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+//shared module
+import { SharedModule } from 'src/auth/shared/shared.module';
+
+SharedModule;
+
 const ROUTES: Routes = [
   {
     path: 'dashboard',

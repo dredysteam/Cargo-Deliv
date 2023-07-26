@@ -2,34 +2,46 @@
   <div class="orders">
     <h2 class="heading-secondary">Orders</h2>
     <table class="table">
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>Commodity</th>
-          <th>Freight type</th>
-          <th>Pickup Date</th>
-          <th>Pickup Zip</th>
-          <th>Delivery Zip</th>
-          <th>Phone number</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let order of orders">
-          <td>{{ order?.aditionalInfo.company }}</td>
-          <td>{{ order?.aditionalInfo.commodity }}</td>
-          <td>{{ order?.aditionalInfo.freightType }}</td>
-          <td>{{ order?.pickupInfo.pickupDate }}</td>
-          <td>{{ order?.pickupInfo.pickupZipcode }}</td>
-          <td>{{ order?.deliveryInfo.deliveryZipcode }}</td>
-          <td>{{ order?.aditionalInfo.phone }}</td>
-          <td>initial</td>
+      <!-- <tbody>
+        <tr *ngFor="let order of orders$ | async">
+          <td>{{ order.aditionalInfo?.company }}</td>
+          <td>{{ order.aditionalInfo?.commodity }}</td>
+          <td>{{ order.aditionalInfo?.freightType }}</td>
+          <td>{{ order.pickupInfo?.pickupDate }}</td>
+          <td>{{ order.pickupInfo?.pickupZipcode }}</td>
+          <td>{{ order.deliveryInfo?.deliveryZipcode }}</td>
+          <td>{{ order.aditionalInfo?.hpone }}</td>
           <td>
-            <button>Edit</button>
+            <p *ngIf="expression">initial</p>
+            <input *ngIf="!expression" type="text" />
           </td>
         </tr>
-      </tbody>
+       
+      </tbody> -->
+      <!-- <ng-template #loading>
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </ng-template> -->
     </table>
+
+    <div class="list-item-header">
+      <p>Company</p>
+      <p>Commodity</p>
+      <p>Freight type</p>
+      <p>Pickup Date</p>
+      <p>Pickup Zip</p>
+      <p>Delivery Zip</p>
+      <p>Phone number</p>
+      <p>Status</p>
+    </div>
+    <div *ngIf="orders$ | async as orders">
+      <app-list-item
+        *ngFor="let order of orders$ | async"
+        [item]="order"
+        (update)="updateOrder($event)"
+        >>
+      </app-list-item>
+    </div>
   </div>
 </section>
