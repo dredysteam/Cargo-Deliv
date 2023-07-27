@@ -1,7 +1,9 @@
-<div>
+<section class="section">
   <app-auth-form (submitted)="loginUser($event)">
-    <h1>Login</h1>
+    <span class="subheading">Cargo Express Account</span>
+    <p>Please sign in to access your account</p>
+    <h1>Sign In</h1>
     <a routerLink="/auth/register">Not registered?</a>
     <button type="submit">Login</button>
   </app-auth-form>
-</div>
+</section>
