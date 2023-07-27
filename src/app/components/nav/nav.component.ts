@@ -23,6 +23,10 @@ export class NavComponent implements OnInit {
       route: 'orders',
       name: 'Orders',
     },
+    {
+      route: 'auth',
+      name: 'Login',
+    },
   ];
 
   constructor() {}
