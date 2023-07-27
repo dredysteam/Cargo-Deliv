@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 // services
 OrdersService;
 import { OrdersService } from 'src/main/shared/services/orders.service';
-import { QuotationService } from '../../../shared/services/quotation.service';
+import { QuotationService } from 'src/main/shared/services/quotation.service';
 
 import { Observable, Subscription } from 'rxjs';
 import { Store } from 'src/store';

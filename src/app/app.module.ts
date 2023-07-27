@@ -22,6 +22,9 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+//store
+import { Store } from 'src/store';
+
 const ROUTES: Routes = [
   {
     path: '',
@@ -42,7 +45,7 @@ const ROUTES: Routes = [
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [Store],
   bootstrap: [AppComponent],
   exports: [HeaderComponent, NavComponent],
 })
