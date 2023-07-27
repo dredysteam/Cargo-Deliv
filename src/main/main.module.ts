@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 //shared module
 import { SharedModule } from 'src/auth/shared/shared.module';
@@ -27,6 +28,7 @@ const ROUTES: Routes = [
     path: 'orders',
     loadChildren: () =>
       import('./orders/orders.module').then((m) => m.OrdersModule),
+    ...canActivate(() => redirectUnauthorizedTo(['/auth/register'])),
   },
 ];
 
