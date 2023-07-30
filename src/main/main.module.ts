@@ -28,7 +28,7 @@ const ROUTES: Routes = [
     path: 'orders',
     loadChildren: () =>
       import('./orders/orders.module').then((m) => m.OrdersModule),
-    ...canActivate(() => redirectUnauthorizedTo(['/auth/register'])),
+    ...canActivate(() => redirectUnauthorizedTo(['/auth'])),
   },
 ];
 

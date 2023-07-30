@@ -5,5 +5,8 @@
     src="../../../assets/delivery-logo.jpg"
   />
   <app-nav></app-nav>
-  <button (click)="logout()">Logout</button>
+  <div>
+    <button *ngIf="!user?.authenticated" [routerLink]="'auth'">Account</button>
+    <button *ngIf="user?.authenticated" (click)="logoutUser()">Logout</button>
+  </div>
 </header>

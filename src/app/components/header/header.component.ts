@@ -1,18 +1,30 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  Input,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { User } from 'src/auth/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() signout = new EventEmitter<any>();
+  @Input()
+  user: User;
+
+  @Output() logout = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  logout() {
-    this.signout.emit();
+  logoutUser() {
+    this.logout.emit();
   }
 }
