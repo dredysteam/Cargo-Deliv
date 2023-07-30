@@ -1,6 +1,9 @@
 import { BehaviorSubject, distinctUntilChanged, Observable, pluck } from 'rxjs';
 
+import { User } from './auth/shared/services/auth/auth.service';
+
 export interface State {
+  user: User;
   orders: any[];
   [key: string]: any;
 }
