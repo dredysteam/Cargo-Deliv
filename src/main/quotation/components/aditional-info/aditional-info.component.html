@@ -1,25 +1,45 @@
 <div [formGroup]="parent" class="quotation-form-item">
   <div formGroupName="aditionalInfo" class="flex-y-container">
     <h3 class="heading-terciary">Additional Shipping Information</h3>
-    <label>Company:</label>
-    <input type="text" formControlName="company" />
-    <small class="error" *ngIf="required('company')">Company is required</small>
-    <label>Email:</label>
-    <input type="text" formControlName="email" />
-    <label>Phone:</label>
-    <input type="text" formControlName="phone" />
-    <label>Commodity:</label>
-    <input type="text" placeholder="e.g food" formControlName="commodity" />
-    <label for="total-weight">Total Weight:</label>
-    <input type="number" formControlName="totalWeight" />
+    <div class="flex-y-container-center">
+      <label>Company:</label>
+      <input type="text" formControlName="company" />
+      <small class="error" *ngIf="required('company')"
+        >Company is required</small
+      >
+    </div>
 
-    <label>Freight Type:</label>
-    <select formControlName="freightType">
-      <option value="Dry Van">Dry Van</option>
-      <option value="Refrigerated">Refrigerated</option>
-    </select>
-    <small class="error" *ngIf="required('freightType')"
-      >Freight type is required</small
-    >
+    <div class="flex-y-container-center">
+      <label>Email:</label>
+      <input type="text" formControlName="email" />
+    </div>
+
+    <div class="flex-y-container-center">
+      <label>Phone:</label>
+      <input type="text" formControlName="phone" />
+    </div>
+
+    <div class="flex-y-container-center">
+      <label>Commodity:</label>
+      <input type="text" placeholder="e.g food" formControlName="commodity" />
+    </div>
+
+    <div class="flex-y-container-center">
+      <label for="total-weight">Total Weight:</label>
+      <input type="number" formControlName="totalWeight" />
+    </div>
+
+    <div class="flex-y-container-center">
+      <label for="select-freight">Freight Type:</label>
+      <select id="select-freight" formControlName="freightType">
+        <option value="">Please choose one option:</option>
+        <option value="Dry Van">Dry Van</option>
+        <option value="Refrigerated">Refrigerated</option>
+      </select>
+
+      <small class="error" *ngIf="required('freightType')"
+        >Freight type is required</small
+      >
+    </div>
   </div>
 </div>

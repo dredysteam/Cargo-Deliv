@@ -1,17 +1,25 @@
 <div [formGroup]="parent" class="quotation-form-item">
   <div formGroupName="selector" class="flex-y-container">
-    <label>Pallet Type:</label>
-    <select formControlName="type">
-      <option value="">Select pallet type</option>
-      <option *ngFor="let item of palletTypes" [value]="item.id">
-        {{ item.type }}
-      </option>
-    </select>
-    <label>Pallet Height:(inches)</label>
-    <input type="number" formControlName="high" />
+    <div class="flex-y-container-center">
+      <label>Pallet Type:</label>
+      <select formControlName="type">
+        <option value="">Please choose one option:</option>
+        <option *ngFor="let item of palletTypes" [value]="item.id">
+          {{ item.type }}
+        </option>
+      </select>
+    </div>
 
-    <label>Pallet Quantity:</label>
-    <input type="number" formControlName="quantity" />
+    <div class="flex-y-container-center">
+      <label>Pallet Height:(inches)</label>
+      <input type="number" formControlName="high" />
+    </div>
+
+    <div class="flex-y-container-center">
+      <label>Pallet Quantity:</label>
+      <input type="number" formControlName="quantity" />
+    </div>
+
     <a class="btn-add-stock" (click)="onAdd()">Add stock</a>
 
     <!-- <label class="step-description" for="temperature">Temperature:</label>

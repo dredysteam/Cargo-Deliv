@@ -183,6 +183,12 @@ button {
   flex-direction: column;
   gap: 1rem;
 }
+.flex-y-container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 
 .flex-x-container {
   display: flex;

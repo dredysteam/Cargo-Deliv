@@ -3,15 +3,18 @@
     <h3 class="heading-terciary">
       Where are you shipping to? - Delivery Location
     </h3>
-    <label>Zipcode:</label>
-    <input
-      type="text"
-      placeholder="Enter Delivery ZipCode"
-      formControlName="deliveryZipcode"
-    />
-    <small class="error" *ngIf="required('deliveryZipcode')"
-      >Delivery ZipCode is required</small
-    >
+    <div class="flex-y-container-center">
+      <label>Zipcode:</label>
+      <input
+        type="text"
+        placeholder="Enter Delivery ZipCode"
+        formControlName="deliveryZipcode"
+      />
+      <small class="error" *ngIf="required('deliveryZipcode')"
+        >Delivery ZipCode is required</small
+      >
+    </div>
+
     <div class="flex-x-container">
       <label>Do you require Appointment?</label>
       <input
