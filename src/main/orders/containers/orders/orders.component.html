@@ -1,29 +1,6 @@
 <section class="section-orders">
-  <div class="orders">
+  <div class="orders" *ngIf="orders$ | async as orders; else loading">
     <h2 class="heading-secondary">Orders</h2>
-    <table class="table">
-      <!-- <tbody>
-        <tr *ngFor="let order of orders$ | async">
-          <td>{{ order.aditionalInfo?.company }}</td>
-          <td>{{ order.aditionalInfo?.commodity }}</td>
-          <td>{{ order.aditionalInfo?.freightType }}</td>
-          <td>{{ order.pickupInfo?.pickupDate }}</td>
-          <td>{{ order.pickupInfo?.pickupZipcode }}</td>
-          <td>{{ order.deliveryInfo?.deliveryZipcode }}</td>
-          <td>{{ order.aditionalInfo?.hpone }}</td>
-          <td>
-            <p *ngIf="expression">initial</p>
-            <input *ngIf="!expression" type="text" />
-          </td>
-        </tr>
-       
-      </tbody> -->
-      <!-- <ng-template #loading>
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-        </ng-template> -->
-    </table>
 
     <div class="list-item-header">
       <p>Company</p>
@@ -35,13 +12,18 @@
       <p>Phone number</p>
       <p>Status</p>
     </div>
-    <div *ngIf="orders$ | async as orders">
-      <app-list-item
-        *ngFor="let order of orders$ | async"
-        [item]="order"
-        (update)="updateOrder($event)"
-        >>
-      </app-list-item>
-    </div>
+
+    <app-list-item
+      *ngFor="let order of orders"
+      [item]="order"
+      (update)="updateOrder($event)"
+      >>
+    </app-list-item>
   </div>
+  <ng-template #loading>
+    <div class="message">
+      <img src="../../../../assets/loading-80.png" />
+      Fetching orders...
+    </div>
+  </ng-template>
 </section>

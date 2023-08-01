@@ -1,4 +1,8 @@
 .list-item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.list-item-body {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
 }
