@@ -5,6 +5,7 @@ import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 //shared module
 import { SharedModule } from 'src/auth/shared/shared.module';
+import { AdminGuard } from 'src/auth/shared/guards/admin.guard';
 
 SharedModule;
 
@@ -28,7 +29,8 @@ const ROUTES: Routes = [
     path: 'orders',
     loadChildren: () =>
       import('./orders/orders.module').then((m) => m.OrdersModule),
-    ...canActivate(() => redirectUnauthorizedTo(['/auth'])),
+    canActivate: [AdminGuard],
+    // ...canActivate(() => redirectUnauthorizedTo(['/auth'])),
   },
 ];
 

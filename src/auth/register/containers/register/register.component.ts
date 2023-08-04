@@ -17,7 +17,10 @@ export class RegisterComponent implements OnInit {
   registerUser(event: FormGroup) {
     this.authService
       .createUser(event.value.email, event.value.password)
-      .then((resp) => this.router.navigate(['/auth']))
+      .then((resp) => {
+        console.log(resp);
+        this.router.navigate(['/auth']);
+      })
       .catch((error) => alert('ERROR' + error));
   }
 }
