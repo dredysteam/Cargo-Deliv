@@ -32,8 +32,15 @@ export class LoginComponent implements OnInit {
           email: userCredencial.user.email,
           uid: userCredencial.user.uid,
           authenticated: true,
+          roles: {
+            admin: false,
+          },
         };
+        // this.authService.isAdmin()
+        //   ? (user.roles.admin = true)
+        //   : (user.roles.admin = false);
         console.log(user);
+
         this.store.set('user', user);
         this.router.navigate(['/dashboard']);
       })

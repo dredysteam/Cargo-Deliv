@@ -58,3 +58,9 @@
   width: 35%;
   /* z-index: 10; */
 }
+
+@media (max-width: 59em) {
+  .step-number {
+    font-size: 7.4rem;
+  }
+}

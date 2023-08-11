@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { RouterModule, Routes } from '@angular/router';
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -44,6 +46,7 @@ const ROUTES: Routes = [
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
+    // BrowserAnimationsModule,
   ],
   providers: [Store],
   bootstrap: [AppComponent],

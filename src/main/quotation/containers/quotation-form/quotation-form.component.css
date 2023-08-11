@@ -40,3 +40,9 @@
 .grid-item-button {
   grid-column: 1/3;
 }
+
+@media (max-width: 59em) {
+  .quotation-form {
+    grid-template-columns: 1fr;
+  }
+}
